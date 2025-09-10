@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #151521;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #7B61FF;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #7B61FF;
+}
+
+/* Botón hamburguesa oculto en escritorio */
+.hamburguesa {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive: mostrar hamburguesa */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #1e1e2f;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+  .menu.activo {
+    display: flex;
+  }
+}
