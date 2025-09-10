@@ -10,6 +10,8 @@ body {
   padding: 15px;
   background: #151521;
   color: #fff;
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
@@ -18,9 +20,11 @@ body {
 }
 
 .menu {
+  margin-top: 0;
   list-style: none;
   display: flex;
   gap: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .menu li a {
@@ -41,6 +45,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 200;
 }
 
 /* Responsive: mostrar hamburguesa */
@@ -49,16 +54,20 @@ body {
     display: block;
   }
   .menu {
-    display: none;
-    flex-direction: column;
-    background: #1e1e2f;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     right: 0;
-    width: 200px;
-    padding: 20px;
+    height: 100%;
+    width: 220px;
+    background: #1e1e2f;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translateX(100%); /* Oculto por defecto */
   }
   .menu.activo {
-    display: flex;
+    margin-top: 0;
+    transform: translateX(0); /* Se desliza desde la derecha */
   }
 }
